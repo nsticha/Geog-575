@@ -51,3 +51,4 @@ function cities(){
 }
 
 document.addEventListener('DOMContentLoaded',initialize)
+

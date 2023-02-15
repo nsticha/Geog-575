@@ -1,9 +1,4 @@
 
-//initialize function called when the script loads
-function initialize(){
-    cities();
-};
-
 //function to create a table with cities and their populations
 function cities(){
     //define two arrays for cities and population
@@ -66,7 +61,7 @@ function cities(){
     
                 if (cityPop[i-1].population < 100000){
                     citySize = 'Small';
-    // Bug here, must capetalize S in citySize or else all will appear as medium
+    // Bug here, must capitalize S in citySize or else all will appear as medium
                 } else if (cityPop[i-1].population < 500000){
                     citySize = 'Medium';
     
@@ -92,7 +87,8 @@ function addEvents(){
  //the event mouseover allows the hilight effect to take place when we hover over the item table
 	document.querySelector("table").addEventListener("mouseover", function(){
 	// creating the random color variable in our random color function
-        var color = "rgb(";
+    //rgb(35,78,78)    
+    var color = "rgb(";
 		//generate random color
 		for (var i=0; i<3; i++){
 // random variable to select color upon each hover over
@@ -122,5 +118,37 @@ function addEvents(){
 //  the event listener allows the click event to happen when hovering over the table
 	document.querySelector("table").addEventListener("click", clickme)
 };
+
 // this executes the script as soon as the DOM is prepared, making loading time faster
 document.addEventListener('DOMContentLoaded',initialize)
+
+//initialize function called when the script loads
+// only one initialize function can be created, so the cities function must be moved here 
+
+function initialize(){
+    cities();
+	loadData();
+};
+function loadData(){
+	var cities;
+// use the fetch method to retrieve the MegaCities geojson from the server.
+	fetch("data/MegaCities.geojson")
+    // after fetch we generate a response that returbs the .json file
+		.then(function(response){
+			return response.json();
+		})
+        // this calls the debug callback function immedietly after the json so we actually get the GEOjson debugged
+        .then(debugCallback)
+        // since we keep our cities table, we must also include it as part of our fetch, and as a result it gets a response 
+		.then(function(response) {
+			cities = response;
+			console.log(cities);
+		})
+      
+}
+
+// this function connects the MegaCities csv to my html div. I dont understand the stringify part but it must have soemthing to do with connection the JSON file  
+function debugCallback(myData){
+	document.querySelector("#divtwo").insertAdjacentHTML('beforeend',"GeoJSON data: " + JSON.stringify(myData));
+};
+
