@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded',initialize)
 // only one initialize function can be created, so the cities function must be moved here 
 
 function initialize(){
-    cities();
+    cities();``
 	loadData();
 };
 function loadData(){

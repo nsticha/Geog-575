@@ -1,0 +1,23 @@
+.axis path,
+.axis line {
+    fill: none;
+    stroke: rgb(0, 157, 255);
+    stroke-width: 1px;
+    shape-rendering: crispEdges;
+}
+
+.axis text {
+    font-family: sans-serif;
+    font-size: 0.9em;
+    color: rgb(2, 35, 57)
+}
+
+.title {
+    font-family: sans-serif;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: rgb(2, 35, 57);
+}
+.labels {
+    color:rgb(2, 35, 57) ;
+}
