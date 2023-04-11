@@ -1,23 +1,23 @@
-.axis path,
-.axis line {
+/*Example 2.9*/
+.map {
+    border: medium solid rgb(93, 164, 136);
+}
+
+/*Example 2.4*/
+
+.countries {
+    fill: rgb(218, 219, 222);
+    stroke: rgb(133, 165, 162);
+    stroke-width: 2px;
+}
+
+/*Example 2.7*/
+.gratLines {
     fill: none;
-    stroke: rgb(0, 157, 255);
+    stroke: #999;
     stroke-width: 1px;
-    shape-rendering: crispEdges;
 }
 
-.axis text {
-    font-family: sans-serif;
-    font-size: 0.9em;
-    color: rgb(2, 35, 57)
-}
-
-.title {
-    font-family: sans-serif;
-    font-size: 1.5em;
-    font-weight: bold;
-    color: rgb(2, 35, 57);
-}
-.labels {
-    color:rgb(2, 35, 57) ;
+.gratBackground {
+    fill: #D5E3FF;
 }
