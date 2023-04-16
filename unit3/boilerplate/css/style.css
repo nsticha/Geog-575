@@ -1,6 +1,7 @@
 /*Example 2.9*/
 .map {
     border: medium solid rgb(93, 164, 136);
+    margin: 10px 0 0 20px;
 }
 
 /*Example 2.4*/
@@ -14,10 +15,34 @@
 /*Example 2.7*/
 .gratLines {
     fill: none;
-    stroke: #999;
+    stroke: rgb(181, 210, 201);
     stroke-width: 1px;
 }
 
 .gratBackground {
-    fill: #D5E3FF;
+    fill: #d5d7c2;
+}
+.countries {
+    stroke: #000;
+    stroke-width: 0.5px;
+    stroke-linecap: round;
+}
+
+.chart {
+    background-color: rgba(128,128,128,.2);
+    border: medium solid #999;
+    float: right;
+    margin: 10px 20px 0 0;
+}
+
+.numbers {
+    fill: rgb(255, 255, 255);
+    font-family: sans-serif;
+}
+
+.chartTitle {
+    font-family: sans-serif;
+    font-size: 1.25em;
+    font-weight: bold;
+    fill: rgb(32, 48, 48);
 }
